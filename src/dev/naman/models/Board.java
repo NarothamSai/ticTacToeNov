@@ -11,7 +11,7 @@ public class Board {
         for (int i = 0; i < rows; ++i) {
             board.add(new ArrayList<>());
             for (int j = 0; j < columns; ++j) {
-                board.get(i).add(new Cell());
+                board.get(i).add(new Cell(i,j));
             }
         }
     }
@@ -19,8 +19,9 @@ public class Board {
     public void printBoard() {
         for (int i = 0; i < board.size(); ++i) {
             for (int j = 0; j < board.get(i). size(); ++j) {
-                System.out.printf("%c ", board.get(i).get(j).symbol.getSymbol());
+                System.out.printf("|%c|", board.get(i).get(j).symbol.getSymbol());
             }
+            System.out.printf("\n");
         }
         System.out.printf("\n");
     }
